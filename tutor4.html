@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>TutorRegister1</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="tutor1.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+        <style>
+            .flatpickr-calendar {
+                background-color: #fff; /* Background color */
+            }
+    
+            .flatpickr-weekday {
+                background-color: #f0f0f0; /* Weekday background color */
+            }
+    
+            .flatpickr-day {
+                color: #0f0f0f; /* Day text color */
+            }
+    
+            .flatpickr-day.today {
+                background-color: #f5f5f5; /* Today's date background color */
+            }
+    
+            .flatpickr-day.selected {
+                background-color: grey; /* Selected date background color */
+                color: black; /* Selected date text color */
+                width: fit-content;
+                height: fit-content;
+            }
+    
+            /* Custom styling for time picker */
+            .flatpickr-time {
+                background-color: #fff; /* Time picker background color */
+                border: 1px solid #ddd; /* Time picker border */
+            }
+    
+            .flatpickr-time input[type="number"] {
+                background-color: #f9f9f9; /* Input field background color */
+                border: 1px solid #ddd; /* Input field border */
+            }
+    
+            /* Custom styling for buttons */
+            .flatpickr-confirm {
+                background-color: #3498db; /* Confirm button background color */
+                color: #fff; /* Confirm button text color */
+            }
+    
+            .flatpickr-clear {
+                color: #333; /* Clear button text color */
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Tutor Regstration</h1>
+
+        <div class="div-topbar">
+            <ul class="topbar">
+                <li>Peronal Information</li>
+                <li>Educational Experience</li>
+                <li>Teaching Style & Approach</li>
+                <li class="active-tab">Availability & Preferences</li>
+                <li>Upload Documents</li>
+                <li>Terms & Conditions</li>
+            </ul>
+        </div>
+
+
+        <div class="main">
+            <p>Choose whether you prefer online or in-person tutoring and specify your availability for sessions. 
+            You can also mention any additional preferences or requirements you have for the tutoring sessions.</p>
+
+            <div class="main-one">
+                <div class="main align-left" style="margin-bottom: 15px; border: none; box-shadow: none;">
+                    <div class="inputgroup">
+                        <label for="subjects" class="inputlabel"><h2>Preferred Subjects:</h2></label>
+                        <select name="subjects" class="inputfield" placeholder="Select specific subjects within your expertise that you will be tutoring">
+                            <option value="Interactive">Interactive</option>
+                            <option value="Lecture-based">Lecture-based</option>
+                            <option value="Hands-on">Hands-on</option>
+                            <option value="Customized">Customized</option>
+                        </select>
+                    </div>
+    
+                    <div class="inputgroup">
+                        <label for="assessment" class="inputlabel"><h2>Student Assessment Approach:</h2></label>
+                        <select name="assessment" class="inputfield" placeholder="quizzes, tests, projects, or other methods.">
+                            <option value="quizzes">quizzes</option>
+                            <option value="tests">tests</option>
+                            <option value="projects">projects</option>
+                            <option value="others">others</option>
+                        </select>
+                    </div>
+
+                    <div class="inputgroup">
+                        <label for="support" class="inputlabel"><h2>Availability for Additional Support:</h2></label>
+                        <select name="support" class="inputfield" placeholder="Specify if you are available for additional support outside of scheduled tutoring sessions">
+                            <option value="Interactive">Interactive</option>
+                            <option value="Lecture-based">Lecture-based</option>
+                            <option value="Hands-on">Hands-on</option>
+                            <option value="Customized">Customized</option>
+                        </select>
+                    </div>
+
+                </div>
+    
+                <div class="main-two align-left" style="margin-bottom: 15px;">
+                    <div class="inputgroup" id="date-picker">
+                        <!-- <label for="date-picker">Select a date:</label>
+                        <input type="text" id="date-picker" name="date-picker"> -->
+                        
+                        <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+                        <script>
+                            flatpickr("#date-picker", {
+                                enableTime: true, 
+                                dateFormat: "Y-m-d H:i", 
+                                altFormat: "F j, Y",
+                                defaultDate: "today",
+                                inline: true
+                            });
+                        </script>                    
+                    </div>
+                </div>    
+            </div>
+
+        </div>
+
+        <div class="foot">
+            <button class="back"><a href="tutor3.html">Return to Previous Location</a></button>
+
+            <button class="next"><a href="tutor5.html">Next</a></button>
+        </div>
+        
+        <script src="" async defer></script>
+    </body>
+</html>

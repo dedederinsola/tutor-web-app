@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>TutorRegister1</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="tutor1.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+    </head>
+
+    <body>
+
+        <h1>Tutor Regstration</h1>
+
+        <div class="div-topbar">
+            <ul class="topbar">
+                <li>Peronal Information</li>
+                <li>Educational Experience</li>
+                <li>Teaching Style & Approach</li>
+                <li>Availability & Preferences</li>
+                <li class="active-tab">Upload Documents</li>
+                <li>Terms & Conditions</li>
+            </ul>
+        </div>
+
+
+        <div class="main">
+            <p><b>List Of Documents To Upload</b></p>
+            <ul class="somelist">
+                <li>Educational Certificates</li>
+                <li>Resume or Curriculum Vitae (CV)</li>
+                <li>Professional Development Certificates</li>
+                <li>Identification Documents and others</li>
+            </ul>
+            <div class="main-one" style="justify-content: space-between; width: auto;">
+                <h2 style="color: #0162E8;"><b>Educational Supporting Documents</b></h2>
+                <label for="fileInput" class="upload-button">Upload Document</label>
+                <input type="file" id="fileInput" multiple style="display: none;">            
+            </div>
+            <div>
+                <table id="fileTable">
+                    <thead>
+                        <tr>
+                            <th>File Name</th>
+                            <th>File Size (KB)</th>
+                            <th>File Type</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>                    
+            </div>
+
+        </div>
+
+        <div class="foot">
+            <button class="back"><a href="tutor3.html">Return to Previous Location</a></button>
+
+            <button class="next"><a href="tutor5.html">Next</a></button>
+        </div>
+        
+        <script>
+            // script.js
+            document.getElementById('fileInput').addEventListener('change', function(event) {
+                const fileTableBody = document.getElementById('fileTable').getElementsByTagName('tbody')[0];
+                fileTableBody.innerHTML = ''; // Clear existing table content
+
+                Array.from(event.target.files).forEach(file => {
+                    const row = document.createElement('tr');
+
+                    const fileNameCell = document.createElement('td');
+                    fileNameCell.textContent = file.name;
+                    row.appendChild(fileNameCell);
+
+                    const fileSizeCell = document.createElement('td');
+                    fileSizeCell.textContent = (file.size / 1024).toFixed(2); // Size in KB
+                    row.appendChild(fileSizeCell);
+
+                    const fileTypeCell = document.createElement('td');
+                    fileTypeCell.textContent = file.type || 'N/A';
+                    row.appendChild(fileTypeCell);
+
+                    fileTableBody.appendChild(row);
+                });
+            });
+        </script>
+    </body>
+</html>
